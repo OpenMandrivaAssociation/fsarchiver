@@ -1,15 +1,18 @@
 Name:		fsarchiver
 Version:	0.6.8
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
 License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
-# patch from upstream: http://patches.fsarchiver.org/
+# all patches from upstream: http://patches.fsarchiver.org/
 Patch0:		fsarchiver-0.6.8-01-probe-lvm.patch
-
+Patch1:		fsarchiver-0.6.8-02-fix-rest-small-archives.patch
+Patch2:		fsarchiver-0.6.8-03-restore-error-handling.patch
+Patch3:		fsarchiver-0.6.8-04-remove-all-volumes-on-error.patch
+Patch4:		fsarchiver-0.6.8-05-fix-ntfs-links.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	e2fsprogs-devel => 1.41.4
 BuildRequires:	libuuid-devel
@@ -34,6 +37,10 @@ is corrupt, you just loose the current file, not the whole archive.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 %configure2_5x
