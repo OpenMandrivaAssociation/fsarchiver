@@ -1,5 +1,5 @@
 Name:		fsarchiver
-Version:	0.6.9
+Version:	0.6.10
 Release:	%mkrel 1
 
 Summary:	Safe and flexible file-system backup/deployment tool
@@ -8,7 +8,6 @@ License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
 # all patches from upstream: http://patches.fsarchiver.org/
-Patch0:		fsarchiver-0.6.9-01-fix-ntfs-links.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	e2fsprogs-devel => 1.41.4
 BuildRequires:	libuuid-devel
@@ -32,7 +31,6 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure2_5x
