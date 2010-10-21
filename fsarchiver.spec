@@ -1,6 +1,6 @@
 Name:		fsarchiver
 Version:	0.6.10
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
@@ -8,6 +8,7 @@ License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
 # all patches from upstream: http://patches.fsarchiver.org/
+Patch0:		fsarchiver-0.6.10-01-update-supported-btrfs-compat-flags.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	e2fsprogs-devel => 1.41.4
 BuildRequires:	libuuid-devel
@@ -31,9 +32,14 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_5x
+
+#fix overlinking
+sed -i -e 's|-lcom_err||g' Makefile src/Makefile
+
 %make
 
 %install
