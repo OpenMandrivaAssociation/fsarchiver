@@ -1,6 +1,6 @@
 Name:		fsarchiver
 Version:	0.6.10
-Release:	%mkrel 2
+Release:	%mkrel 3
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
