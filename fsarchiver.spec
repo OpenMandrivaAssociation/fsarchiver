@@ -1,5 +1,5 @@
 Name:		fsarchiver
-Version:	0.6.11
+Version:	0.6.12
 Release:	%mkrel 1
 
 Summary:	Safe and flexible file-system backup/deployment tool
@@ -7,6 +7,7 @@ Group:		Archiving/Backup
 License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
+Patch0:		fsarchiver-0.6.12-linking.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	e2fsprogs-devel => 1.41.4
 BuildRequires:	libuuid-devel
@@ -30,14 +31,12 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %prep
 %setup -q
+%patch0 -b .linking
 
 %build
 %configure2_5x
 
-#fix overlinking
-sed -i -e 's|-lcom_err||g' Makefile src/Makefile
-
-%make
+%make V=1
 
 %install
 rm -rf %{buildroot}
