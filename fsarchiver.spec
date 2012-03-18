@@ -1,15 +1,14 @@
 Name:		fsarchiver
-Version:	0.6.12
-Release:	%mkrel 1
+Version:	0.6.13
+Release:	1
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
 License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
-Patch0:		fsarchiver-0.6.12-linking.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:	e2fsprogs-devel => 1.41.4
+Patch0:		fsarchiver-0.6.13-linking.patch
+#BuildRequires:	e2fsprogs-devel => 1.41.4
 BuildRequires:	libuuid-devel
 BuildRequires:	libblkid-devel
 BuildRequires:	e2fsprogs
@@ -31,7 +30,7 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %prep
 %setup -q
-%patch0 -b .linking
+%patch0 -p1
 
 %build
 %configure2_5x
@@ -39,14 +38,9 @@ is corrupt, you just loose the current file, not the whole archive.
 %make V=1
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc README THANKS NEWS ChangeLog
 %{_sbindir}/%{name}
 %{_mandir}/man8/%{name}*
