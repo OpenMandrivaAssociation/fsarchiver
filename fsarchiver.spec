@@ -8,7 +8,7 @@ License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
 Patch0:		fsarchiver-0.6.13-linking.patch
-#BuildRequires:	e2fsprogs-devel => 1.41.4
+BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	libuuid-devel
 BuildRequires:	libblkid-devel
 BuildRequires:	e2fsprogs
