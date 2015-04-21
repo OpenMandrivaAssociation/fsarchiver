@@ -1,6 +1,6 @@
 Name:		fsarchiver
 Version:	0.6.17
-Release:	2
+Release:	3
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
@@ -16,7 +16,7 @@ BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	bzip2-devel
-BuildRequires:	liblzo-devel
+BuildRequires:	lzo-devel
 BuildRequires:	pkgconfig(liblzma)
 
 %description
