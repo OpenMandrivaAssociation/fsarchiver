@@ -1,12 +1,12 @@
 Name:		fsarchiver
-Version:	0.6.17
-Release:	3
+Version:	0.6.21
+Release:	1
 
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
 License:	GPLv2
 URL:		http://www.fsarchiver.org
-Source0:  	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz      
+Source0:  	https://github.com/fdupoux/fsarchiver/releases/download/%{version}/%{name}-%{version}.tar.gz
 Patch0:		fsarchiver-0.6.13-linking.patch
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
