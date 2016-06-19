@@ -1,5 +1,5 @@
 Name:		fsarchiver
-Version:	0.6.21
+Version:	0.6.23
 Release:	1
 
 Summary:	Safe and flexible file-system backup/deployment tool
