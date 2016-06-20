@@ -1,5 +1,5 @@
 Name:		fsarchiver
-Version:	0.6.21
+Version:	0.6.23
 Release:	1
 
 Summary:	Safe and flexible file-system backup/deployment tool
@@ -34,7 +34,7 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %build
 sed -i -e 's/^\([a-z]*_CFLAGS.*\)-ggdb/\1/' src/Makefile.am
-%configure2_5x
+%configure
 
 %make V=1
 
