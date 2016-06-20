@@ -34,7 +34,7 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %build
 sed -i -e 's/^\([a-z]*_CFLAGS.*\)-ggdb/\1/' src/Makefile.am
-%configure2_5x
+%configure
 
 %make V=1
 
