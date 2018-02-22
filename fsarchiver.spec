@@ -1,5 +1,5 @@
 Name:		fsarchiver
-Version:	0.8.1
+Version:	0.8.4
 Release:	1
 
 Summary:	Safe and flexible file-system backup/deployment tool
@@ -7,7 +7,6 @@ Group:		Archiving/Backup
 License:	GPLv2
 URL:		http://www.fsarchiver.org
 Source0:  	https://github.com/fdupoux/fsarchiver/releases/download/%{version}/%{name}-%{version}.tar.gz
-Patch0:		fsarchiver-0.6.13-linking.patch
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(blkid)
@@ -18,6 +17,7 @@ BuildRequires:	pkgconfig(zlib)
 BuildRequires:	bzip2-devel
 BuildRequires:	lzo-devel
 BuildRequires:	pkgconfig(liblzma)
+BuildRequires:	pkgconfig(libzstd)
 
 %description
 FSArchiver is a system tool that allows you to save the contents of a
@@ -30,7 +30,6 @@ is corrupt, you just loose the current file, not the whole archive.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 sed -i -e 's/^\([a-z]*_CFLAGS.*\)-ggdb/\1/' src/Makefile.am
