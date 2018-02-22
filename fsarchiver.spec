@@ -18,6 +18,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	lzo-devel
 BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(libzstd)
+BuildRequires:	pkgconfig(liblz4)
 
 %description
 FSArchiver is a system tool that allows you to save the contents of a
