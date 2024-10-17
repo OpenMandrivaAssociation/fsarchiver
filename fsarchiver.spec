@@ -5,7 +5,7 @@ Release:	1
 Summary:	Safe and flexible file-system backup/deployment tool
 Group:		Archiving/Backup
 License:	GPLv2
-URL:		http://www.fsarchiver.org
+URL:		https://www.fsarchiver.org
 Source0:  	https://github.com/fdupoux/fsarchiver/releases/download/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
