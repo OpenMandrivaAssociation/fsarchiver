@@ -7,6 +7,11 @@ Group:		Archiving/Backup
 License:	GPLv2
 URL:		https://www.fsarchiver.org
 Source0:  	https://github.com/fdupoux/fsarchiver/releases/download/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(blkid)
